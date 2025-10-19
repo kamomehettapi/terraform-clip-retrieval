@@ -6,18 +6,6 @@ resource "databricks_job" "clip_retrieval_e2e" {
   # Shared parameters
   #
 
-  # `org_id/repo_id` pair of repo to download from HuggingFace
-  parameter {
-    name    = "dataset_id"
-    default = "laion/relaion-pop"
-  }
-
-  # Output folder of img2dataset files in S3 (`s3://my-bucket/datasets/<dataset_name>/`)
-  parameter {
-    name    = "dataset_name"
-    default = "relaion-pop"
-  }
-
   # S3 bucket that notebooks will access
   parameter {
     name    = "s3_bucket_name"
@@ -25,8 +13,24 @@ resource "databricks_job" "clip_retrieval_e2e" {
   }
 
   #
+  # fetch-dataset parameters
+  #
+
+  # `org_id/repo_id` pair of repo to download from HuggingFace (`s3://my-bucket/datasets/<dataset_id>`)
+  parameter {
+    name    = "dataset_id"
+    default = "laion/relaion-pop"
+  }
+
+  #
   # img2dataset parameters
   #
+
+  # Output folder of img2dataset files in S3 (`s3://my-bucket/images/<images_name>/`)
+  parameter {
+    name    = "images_name"
+    default = "relaion-pop-336"
+  }
 
   # Processes for img2dataset
   parameter {

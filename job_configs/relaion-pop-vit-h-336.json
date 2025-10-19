@@ -2,7 +2,7 @@
   "job_id": 204242044446672,
   "job_parameters": {
     "dataset_id": "laion/relaion-pop",
-    "dataset_name": "relaion-pop-336",
+    "images_name": "relaion-pop-336",
     "image_size": "336",
     "img2dataset_processes_count": "16",
     "img2dataset_thread_count": "32",

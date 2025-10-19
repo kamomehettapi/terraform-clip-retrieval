@@ -2,7 +2,7 @@
   "job_id": 204242044446672,
   "job_parameters": {
     "dataset_id": "laion/relaion400m",
-    "dataset_name": "relaion400m",
+    "images_name": "relaion400m",
     "image_size": "224",
     "img2dataset_processes_count": "16",
     "img2dataset_thread_count": "128",

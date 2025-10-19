@@ -66,10 +66,9 @@ def sync_hf_repo_to_s3(repo_id: str, hf_token: str, s3_target_path: str):
 # COMMAND ----------
 
 hf_repo_id = dbutils.widgets.get("dataset_id")
-dataset_name = dbutils.widgets.get("dataset_name")
 
 s3_bucket = dbutils.widgets.get("s3_bucket_name")
-s3_folder_path = f"s3://{s3_bucket}/datasets/{dataset_name}"
+s3_folder_path = f"s3://{s3_bucket}/datasets/{hf_repo_id}"
 
 try:
     huggingface_token = dbutils.secrets.get(scope="app", key="huggingface_token")

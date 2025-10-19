@@ -107,11 +107,11 @@ import braceexpand
 import webdataset as wds
 import itertools
 
-dataset_name = dbutils.widgets.get("dataset_name")
+images_name = dbutils.widgets.get("images_name")
 output_name = dbutils.widgets.get("output_name")
 s3_bucket_name = dbutils.widgets.get("s3_bucket_name")
 
-s3_path = f"s3://{s3_bucket_name}/images/{dataset_name}/"
+s3_path = f"s3://{s3_bucket_name}/images/{images_name}/"
 input_dataset = generate_s3_brace_expansion(s3_path, "tar")
 if input_dataset is None:
     raise Exception(f"Could not determine input dataset! S3 path: {s3_path}")
