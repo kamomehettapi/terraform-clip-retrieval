@@ -13,8 +13,8 @@ url_list = f"s3://{s3_bucket_name}/datasets/{hf_repo_id}/"
 image_size = int(dbutils.widgets.get("image_size"))
 url_col = dbutils.widgets.get("url_col")
 caption_col = dbutils.widgets.get("caption_col")
-processes_count = dbutils.widgets.get("img2dataset_processes_count")
-thread_count = dbutils.widgets.get("img2dataset_thread_count")
+processes_count = int(dbutils.widgets.get("img2dataset_processes_count"))
+thread_count = int(dbutils.widgets.get("img2dataset_thread_count"))
 save_additional_columns = dbutils.widgets.get("save_additional_columns").split(",")
 
 # COMMAND ----------
