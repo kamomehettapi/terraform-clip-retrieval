@@ -20,7 +20,7 @@ variable "hcp_organization" {
   description = "HCP organization used to deploy clip-retrieval-workspace previously"
 }
 
-variable "hcp_workspace-name" {
+variable "hcp_workspace_name" {
   type        = string
   description = "HCP workspace used to deploy clip-retrieval-workspace previously"
   default     = "tf-clip-retrieval-workspace"
