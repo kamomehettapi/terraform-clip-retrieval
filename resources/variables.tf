@@ -15,6 +15,17 @@ variable "aws_secret_access_key" {
   description = "AWS secret access key to pass into compute instances"
 }
 
+variable "hcp_organization" {
+  type        = string
+  description = "HCP organization used to deploy clip-retrieval-workspace previously"
+}
+
+variable "hcp_workspace-name" {
+  type        = string
+  description = "HCP workspace used to deploy clip-retrieval-workspace previously"
+  default     = "tf-clip-retrieval-workspace"
+}
+
 variable "databricks_account_id" {
   type        = string
   sensitive   = true

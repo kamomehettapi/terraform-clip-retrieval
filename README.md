@@ -15,6 +15,7 @@ All work is done in end-to-end fashion.
 - `jq`
 - `databricks-cli`
 - `aws-cli`
+- [HCP Terraform](https://app.terraform.io) account
 - S3 Bucket in AWS account where all data will be stored
 
 ## Structure
@@ -36,9 +37,23 @@ export AWS_ACCESS_KEY_ID="<...>"
 export AWS_SECRET_ACCESS_KEY="<...>"
 ```
 
-2. Make sure `terraform.tfvars` AND `secrets.tfvars` are created for BOTH Terraform workspaces
+2. Configure `versions.tf` in both workspaces for your HCP Terraform organization name
 
-3. Deploy!
+```terraform
+terraform {
+  cloud {
+    organization = "my-org-abc123"
+    workspaces {
+      name = "tf-clip-retrieval-workspace"
+    }
+  }
+  # ...
+}
+```
+
+3. Make sure `terraform.tfvars` AND `secrets.tfvars` are created for BOTH Terraform workspaces
+
+4. Deploy!
 
 ``` bash
 bash deploy_terraform.sh

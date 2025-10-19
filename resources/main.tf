@@ -1,6 +1,6 @@
 data "tfe_outputs" "workspace" {
-  organization = "example-org-68b67e"
-  workspace    = "tf-clip-retrieval-workspace"
+  organization = var.hcp_organization
+  workspace    = var.hcp_workspace_name
 }
 
 data "aws_s3_bucket" "external" {
