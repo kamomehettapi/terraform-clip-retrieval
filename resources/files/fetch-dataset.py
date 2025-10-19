@@ -43,19 +43,26 @@ def sync_hf_repo_to_s3(repo_id: str, hf_token: str, s3_target_path: str):
             return
 
         # 2. Upload the downloaded content to S3
-        # The source path for dbutils needs to be prefixed with 'file:/'
-        # to indicate it's on the local driver filesystem.
-        local_fs_path = f"file:{temp_dir}"
-
         # Ensure the destination path ends with a slash for clean copying
         if not s3_target_path.endswith('/'):
             s3_target_path += '/'
 
-        print(f"Uploading files from '{local_fs_path}' to '{s3_target_path}'...")
+        print(f"Searching for .parquet files in '{temp_dir}' and uploading to '{s3_target_path}'...")
+
         try:
-            # Use dbutils.fs.cp with recurse=True to copy the entire directory
-            dbutils.fs.cp(local_fs_path, s3_target_path, recurse=True)
-            print("Upload to S3 complete.")
+            # Walk through the temporary directory to find and upload only .parquet files
+            for root, _, files in os.walk(temp_dir):
+                for filename in files:
+                    if filename.endswith(".parquet"):
+                        local_file_path = os.path.join(root, filename)
+                        # The source path for dbutils needs to be prefixed with 'file:/'
+                        # to indicate it's on the local driver filesystem.
+                        source_path = f"file:{local_file_path}"
+                        # Place the file directly in the target S3 folder, not in a subfolder
+                        dest_path = os.path.join(s3_target_path, filename)
+                        print(f"Uploading '{filename}' to '{dest_path}'...")
+                        dbutils.fs.cp(source_path, dest_path)
+            print("All .parquet files uploaded successfully.")
         except Exception as e:
             print(f"Error uploading to S3: {e}")
             print("Please ensure your cluster's instance profile has write permissions for the target S3 bucket.")
