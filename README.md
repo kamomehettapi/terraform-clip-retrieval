@@ -17,6 +17,11 @@ All work is done in end-to-end fashion.
 - `aws-cli`
 - S3 Bucket in AWS account where all data will be stored
 
+## Structure
+
+- `workspace/`: Infrastructure for Databricks workspace
+- `resources/`: All resources created inside the new Databricks workspace (notebooks, compute, job definition, etc.)
+
 ## Configuration
 
 Please edit `terraform.tfvars` and `secrets.tfvars` for both workspaces, and check variable descriptions
