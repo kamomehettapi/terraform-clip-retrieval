@@ -16,17 +16,17 @@ variable "databricks_user_id" {
   description = "Numeral user ID of the user you use to login to Databricks, so they can be added as admin to new workspace"
 }
 
-# variable "databricks_client_id" {
-#   type        = string
-#   sensitive   = true
-#   description = "Client ID to authenticate Databricks provider"
-# }
+variable "databricks_client_id" {
+  type        = string
+  sensitive   = true
+  description = "Client ID to authenticate Databricks provider"
+}
 
-# variable "databricks_client_secret" {
-#   type        = string
-#   sensitive   = true
-#   description = "Client secret to authenticate Databricks provider"
-# }
+variable "databricks_client_secret" {
+  type        = string
+  sensitive   = true
+  description = "Client secret to authenticate Databricks provider"
+}
 
 variable "tags" {
   default     = {}
