@@ -18,12 +18,6 @@ resource "databricks_job" "clip_retrieval_e2e" {
     default = "relaion-pop"
   }
 
-  # Output folder of clip-retrieval index in S3 (`s3://my-bucket/output/<output_name>/`)
-  parameter {
-    name    = "output_name"
-    default = "relaion-pop-vit-l-336"
-  }
-
   # S3 bucket that notebooks will access
   parameter {
     name    = "s3_bucket_name"
@@ -79,6 +73,12 @@ resource "databricks_job" "clip_retrieval_e2e" {
   parameter {
     name    = "write_batch_size"
     default = "100000"
+  }
+
+  # Output folder of clip-retrieval index in S3 (`s3://my-bucket/output/<output_name>/`)
+  parameter {
+    name    = "output_name"
+    default = "relaion-pop-vit-l-336"
   }
 
   task {
