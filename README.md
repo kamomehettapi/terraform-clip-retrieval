@@ -18,6 +18,8 @@ All work is done in end-to-end fashion.
 - [HCP Terraform](https://app.terraform.io) account
 - S3 Bucket in AWS account where all data will be stored
 
+GPU cluster instances in AWS are deployed with Spot requests. Be sure your "All <node type> Spot Instance Requests" quota in the deployed region is high enough to deploy those! For the default P4 instance it should be 96 vCPUs
+
 ## Structure
 
 - `workspace/`: Infrastructure for Databricks workspace
@@ -26,8 +28,6 @@ All work is done in end-to-end fashion.
 ## Configuration
 
 Please edit `terraform.tfvars` and `secrets.tfvars` for both workspaces, and check variable descriptions
-
-GPU cluster instances are deployed with Spot requests. Be sure your "All <node type> Spot Instance Requests" quota in the deployed region is high enough to deploy those! For the default P4 instance it should be 96 vCPUs
 
 ## Deployment
 
