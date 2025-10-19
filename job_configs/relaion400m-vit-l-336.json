@@ -1,0 +1,16 @@
+{
+  "job_id": 204242044446672,
+  "job_parameters": {
+    "dataset_id": "laion/relaion400m",
+    "dataset_name": "relaion400m",
+    "img2dataset_processes_count": "16",
+    "img2dataset_thread_count": "128",
+    "url_col": "url",
+    "caption_col": "caption",
+    "save_additional_columns": "NSFW,similarity,LICENSE",
+    "write_batch_size": "100000",
+    "clip_model": "ViT-L/14@336px",
+    "image_size": "336",
+    "output_name": "relaion400m-vit-l-336"
+  }
+}

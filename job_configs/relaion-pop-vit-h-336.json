@@ -1,0 +1,16 @@
+{
+  "job_id": 204242044446672,
+  "job_parameters": {
+    "dataset_id": "laion/relaion-pop",
+    "dataset_name": "relaion-pop",
+    "img2dataset_processes_count": "16",
+    "img2dataset_thread_count": "32",
+    "url_col": "url",
+    "caption_col": "cogvlm_caption",
+    "save_additional_columns": "llava_caption,nsfw_prediction,alt_txt,alt_txt_similarity",
+    "write_batch_size": "50000",
+    "clip_model": "open_clip:ViT-H-14-CLIPA-336/laion2b",
+    "image_size": "336",
+    "output_name": "relaion-pop-vit-h-336"
+  }
+}
