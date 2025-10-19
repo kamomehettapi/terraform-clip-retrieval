@@ -1,4 +1,4 @@
-# clip-retrieval-workspace
+# clip-retrieval-workspace ![](https://img.shields.io/badge/Databricks-FF3621?logo=Databricks&logoColor=white) ![](https://img.shields.io/badge/Amazon_Web_Services-FF9900) ![](https://img.shields.io/badge/Terraform-7B42BC?logo=terraform&logoColor=white)
 
 Here is an attempt to recreate [clip-retrieval](https://github.com/rom1504/clip-retrieval) index creation in a reproducible way
 
