@@ -12,7 +12,7 @@ resource "databricks_job" "clip_retrieval_e2e" {
     default = "laion/relaion-pop"
   }
 
-  # Output folder of fetch-dataset files in S3 (`s3://my-bucket/datasets/<dataset_name>/`)
+  # Output folder of img2dataset files in S3 (`s3://my-bucket/datasets/<dataset_name>/`)
   parameter {
     name    = "dataset_name"
     default = "relaion-pop"

@@ -12,7 +12,7 @@ caption_col = dbutils.widgets.get("caption_col")
 processes_count = dbutils.widgets.get("img2dataset_processes_count")
 thread_count = dbutils.widgets.get("img2dataset_thread_count")
 save_additional_columns = dbutils.widgets.get("save_additional_columns").split(",")
-output_dir = f"s3://{s3_bucket_name}/downloaded/{dataset_name}"
+output_dir = f"s3://{s3_bucket_name}/images/{dataset_name}"
 url_list = f"s3://{s3_bucket_name}/datasets/{dataset_name}/"
 
 # COMMAND ----------

@@ -100,7 +100,7 @@ List of valid job params:
 ### Shared
 
 - `dataset_id`: `org_id/repo_id` identifier to download from HuggingFace 
-- `dataset_name`: Folder that fetch-dataset/img2dataset files will be saved to in S3 (`s3://my-bucket/datasets/<dataset_name>/`, `s3://my-bucket/downloaded/<dataset_name>/`)
+- `dataset_name`: Folder that fetch-dataset/img2dataset files will be saved to in S3 (`s3://my-bucket/datasets/<dataset_name>/`, `s3://my-bucket/images/<dataset_name>/`)
   + **Note:** If you want to change either shared or img2dataset parameter, you MUST change `dataset_name` also. fetch-dataset/img2dataset check for existence of dataset folders before running and skip processing if so
 - `s3_bucket_name`: Job default is set automatically through Terraform, should not need changing
 
