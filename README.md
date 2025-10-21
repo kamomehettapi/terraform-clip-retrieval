@@ -91,6 +91,21 @@ bash submit_job.sh job_configs/relaion-pop-vit-l-336.json -p my-profile
 
 3. Open Databricks workspace and check job run
 
+4. Once job completes successfully, you can download finished clip embeddings
+
+List available outputs in S3:
+
+``` bash
+bash download_output.sh
+```
+
+Download an output folder to `output/`:
+
+
+``` bash
+bash download_output.sh relaion-pop-vit-l
+```
+
 ## Job Parameters
 
 The configuration for img2dataset and clip-inference runs may be adjust by changing job params in the `job_configs/` JSON files
@@ -108,7 +123,7 @@ List of valid job params:
 ### img2dataset
 
 - `images_name`: Folder that img2dataset files will be saved to in S3 (`s3://my-bucket/images/<images_name>/`)
-  + **Note:** If you want to change the img2dataset parameter, you MUST change `images_name` also. img2dataset notebook checks for existence of dataset folders before running and skip processing if so
+  + **Note:** If you want to change the img2dataset parameter, you MUST change `images_name` also. img2dataset notebook checks for existence of images folders before running and skip processing if so
 - `img2dataset_processes_count`: Processes for img2dataset (default 16)
 - `img2dataset_thread_count`: Threads for img2dataset (default 32)
 - `image_size`: Pixel size for img2dataset to resize images (usually, 224 or 336)

@@ -22,7 +22,7 @@ TEMP_CONFIG=$(mktemp)
 jq --arg job_id "$JOB_ID" '.job_id = ($job_id | tonumber)' "$JOB_CONFIG" > "$TEMP_CONFIG"
 
 # Submit the job with databricks CLI
-databricks jobs run-now --json @"$TEMP_CONFIG" "$@"
+databricks jobs run-now --no-wait --json @"$TEMP_CONFIG" "$@"
 
 # Clean up temporary file
 rm "$TEMP_CONFIG"
