@@ -126,7 +126,7 @@ List of valid job params:
   + **Note:** If you want to change the img2dataset parameter, you MUST change `images_name` also. img2dataset notebook checks for existence of images folders before running and skip processing if so
 - `img2dataset_processes_count`: Processes for img2dataset (default 16)
 - `img2dataset_thread_count`: Threads for img2dataset (default 32)
-- `image_size`: Pixel size for img2dataset to resize images (usually, 224 or 336)
+- `image_size`: Pixel size for img2dataset to resize images (usually, 224, 256 or 336)
 - `url_col`: In selected dataset, the column name containing image URL
 - `caption_col`: In selected dataset, the column name containing image caption
 - `save_additional_columns`: In selected dataset, additional column names to save in metadata (comma separated)

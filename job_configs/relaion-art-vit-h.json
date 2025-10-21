@@ -10,7 +10,7 @@
     "caption_col": "TEXT",
     "save_additional_columns": "similarity,LANGUAGE,pwatermark,punsafe,aesthetic",
     "write_batch_size": "100000",
-    "clip_model": "ViT-H/14",
+    "clip_model": "open_clip:ViT-H-14",
     "output_name": "relaion-art-vit-h"
   }
 }

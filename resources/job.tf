@@ -44,7 +44,7 @@ resource "databricks_job" "clip_retrieval_e2e" {
     default = "32"
   }
 
-  # Pixel size for img2dataset to resize images (usually, 224 or 336)
+  # Pixel size for img2dataset to resize images (usually, 224, 256 or 336)
   parameter {
     name    = "image_size"
     default = "336"
