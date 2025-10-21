@@ -1,0 +1,16 @@
+{
+  "job_id": 204242044446672,
+  "job_parameters": {
+    "dataset_id": "laion/relaion-art",
+    "images_name": "relaion-art",
+    "image_size": "256",
+    "img2dataset_processes_count": "16",
+    "img2dataset_thread_count": "64",
+    "url_col": "URL",
+    "caption_col": "TEXT",
+    "save_additional_columns": "similarity,LANGUAGE,pwatermark,punsafe,aesthetic",
+    "write_batch_size": "100000",
+    "clip_model": "ViT-H/14",
+    "output_name": "relaion-art-vit-h"
+  }
+}
